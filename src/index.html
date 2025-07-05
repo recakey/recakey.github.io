@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Recakey • Recall-based passwordless vault concept</title>
+        <script src="libs/zip-full.min.js"></script>
+        <script src="index.js"></script>
+        <style>
+            * { box-sizing:border-box; }
+            body { 
+                margin:0; padding:0; padding-left:25vw; padding-right:25vw;
+            }
+        </style>
+    </head>
+    <body>
+        <h1><a target="_self" href="index.html">Recakey</a></h1>
+        <div>Recall-based passwordless vault concept (5 July 2025)</div>
+        Answer the questions in English alphabet.<hr>
+
+        What is the shape you may think of (Alice: Round)?<br>
+        <input id="Shape" value="Round"><hr>
+
+        What is the word you may think of (Alice: Earth)?<br>
+        <input id="Word" value="Earth"><hr>
+
+        What is your town of birth (Alice: Westminster)?<br>
+        <input id="Town" value="Westminster"><hr>
+
+        What is your date of birth DDMMYYYY (Alice: 01011999)?<br>
+        <input id="Dob" value="01011999"><hr>
+
+        What is your father name in native order (Alice: John Doe)?<br>
+        <input id="Father" value="John Doe"><hr>
+
+        What is your mother name in native order (Alice: Mary Doe)?<br>
+        <input id="Mother" value="Mary Doe"><hr>
+
+        What is your first pet's name (Alice: Cooper)?<br>
+        <input id="Pet" value="Cooper"><hr>
+
+        What is your teenage music genre (Alice: Funk)?<br>
+        <input id="Music" value="Funk"><hr>
+
+        What is your favourite sports club (Alice: Arsenal)?<br>
+        <input id="Club" value="Arsenal"><hr>
+
+        Choose a profile to decrypt:<br>
+        <select id="User">
+            <option value="alice">Alice</option>
+            <option value="bob">Bob</option>
+            <option value="charlie">Charlie</option>
+        </select><hr>
+
+        <div style="text-align:right;">
+            <button onclick="decrypt();">Decrypt and Show Contents</button>
+        </div>
+        <div>&nbsp;</div>
+
+        <div>
+            <span style="display:inline-block; width:25vw; float:right;">
+                Vault data:<br>
+                <textarea id="Result" style="width:25vw; height:6rem"></textarea>
+            </span>
+        </div>
+    </body>
+</html>
+<!-- EOF -->
