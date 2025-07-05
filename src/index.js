@@ -15,6 +15,7 @@ function d$$(Sel){
 // This func: Copilot (reviewed, edited)
 async function unzip_enc_blob(blob, file, password) {
     var zipReader;
+
     try{
         // Create a reader for the blob
         const blobReader = new zip.BlobReader(blob);
@@ -67,6 +68,12 @@ async function decrypt(){
         d$("#Result").value = "Not decryptable with entered values";
     else
         d$("#Result").value = Text;
+
+    // Update UI height
+    var Ele = d$("#Result");
+
+    while (Ele.clientHeight<1000 && Ele.clientHeight<Ele.scrollHeight)
+        Ele.style.height = (Ele.clientHeight+20) + "px";
 }
 
 // Main
