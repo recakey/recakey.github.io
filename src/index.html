@@ -4,11 +4,12 @@
         <meta charset="utf-8">
         <title>Recakey • Recall-based passwordless vault concept</title>
         <script src="libs/zip-full.min.js"></script>
-        <script src="index.js"></script>
+        <script type="module" src="index.js"></script>
         <style>
             * { box-sizing:border-box; }
             body { 
                 margin:0; padding:0; padding-left:25vw; padding-right:25vw;
+                padding-bottom:25vh;
             }
         </style>
     </head>
@@ -52,16 +53,18 @@
         </select><hr>
 
         <div style="text-align:right;">
-            <button onclick="decrypt();">Decrypt and Show Contents</button>
+            <button onclick="get_auth_pw();">1.Get Auth Pw to Download</button>
+            <button onclick="decrypt();">2.Decrypt and Show Contents</button>
         </div>
-        <div>&nbsp;</div>
+        <div id="Info" style="text-align:right;">&nbsp;</div>
 
         <div>
             <span style="display:inline-block; width:25vw; float:right;">
-                Vault data:<br>
+                <i>Vault data</i>:<br>
                 <textarea id="Result" style="width:25vw; height:6rem"></textarea>
             </span>
         </div>
+        <div style="height:25vh;">&nbsp;</div>
     </body>
 </html>
 <!-- EOF -->

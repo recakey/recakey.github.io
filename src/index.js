@@ -1,5 +1,10 @@
+// Libs
+import wpower from "./libs/wpower.js";
+
 // Shorthands
 var log = console.log;
+
+function _____UTILS_____(){}
 
 // Select
 function d$(Sel){
@@ -47,11 +52,40 @@ async function unzip_enc_blob(blob, file, password) {
     }
 }
 
+function _____CORE_____(){}
+
+// Show auth info
+async function get_auth_pw(){
+    const {enc} = wpower;
+    const Files={
+        "alice":   "https://drive.proton.me/urls/YWH5YJG3S8#EyB0xGQphFjP",
+        "bob":     "https://drive.proton.me/urls/HA91EJ7YER#ir24uwPZC4T1",
+        "charlie": "https://drive.proton.me/urls/7MY0WPAP6M#1YlvgqwZxKGy"
+    };    
+    var V1     = d$("#Shape").value;
+    var V2     = d$("#Word").value;
+    var V3     = d$("#Town").value;
+    var V4     = d$("#Dob").value;
+    var V5     = d$("#Father").value;
+    var V6     = d$("#Mother").value;
+    var V7     = d$("#Pet").value;
+    var V8     = d$("#Music").value;
+    var V9     = d$("#Club ").value;
+    var User   = d$("#User").value;    
+    var Pw     = V1+V2+V3+V4+V5+V6+V7+V8+V9;
+    var Authpw = (await enc.sha256(Pw)).substring(0,32);
+    var Url    = Files[User];
+    log(`Calculated auth pw of ${User}:`,Authpw);
+    d$("#Info").innerHTML = 
+        `Auth password: <input value="${Authpw}"> —> 
+        <a target="_blank" href="${Url}">Download Data</a>`;
+}
+window.get_auth_pw = get_auth_pw;
 
 // Decrypt
 async function decrypt(){
-    var User = d$("#User").value;
-    var Obj  = await (await fetch(User+".zip")).blob();
+    const {enc} = wpower;
+    // Username and pw
     var V1   = d$("#Shape").value;
     var V2   = d$("#Word").value;
     var V3   = d$("#Town").value;
@@ -61,8 +95,14 @@ async function decrypt(){
     var V7   = d$("#Pet").value;
     var V8   = d$("#Music").value;
     var V9   = d$("#Club ").value;
-    var Pw   = V1+V2+V3+V4+V5+V6+V7+V8+V9;
-    var Text = await unzip_enc_blob(Obj,"recakey.txt",Pw);
+    var User = d$("#User").value;    
+    var Pw   = V1+V2+V3+V4+V5+V6+V7+V8+V9;    
+
+    // Get file
+    var [Handle] = await window.showOpenFilePicker();
+    var File     = await Handle.getFile(); // Already a blob
+    var Obj      = File;
+    var Text     = await unzip_enc_blob(Obj,"recakey.txt",Pw);
 
     if (Text==null)
         d$("#Result").value = "Not decryptable with entered values";
@@ -75,6 +115,7 @@ async function decrypt(){
     while (Ele.clientHeight<1000 && Ele.clientHeight<Ele.scrollHeight)
         Ele.style.height = (Ele.clientHeight+20) + "px";
 }
+window.decrypt = decrypt;
 
 // Main
 async function main(){}
