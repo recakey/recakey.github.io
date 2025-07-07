@@ -69,10 +69,7 @@
                     >Authentication</a></li>
                 <li><a target="_blank" 
                     href="https://en.wikipedia.org/wiki/Encryption"
-                    >Encryption</a></li>
-                <li><a target="_blank" 
-                    href="https://en.wikipedia.org/wiki/Decryption"
-                    >Decryption</a></li>
+                    >Encryption/Decryption</a></li>                
                 <li><a target="_blank" 
                     href="https://en.wikipedia.org/wiki/Multi-factor_authentication#Possession"
                     >Possession</a></li>
@@ -104,6 +101,16 @@
             <div>&nbsp;</div>
 
             <div>
+                <div><big>Overall Design</big></div><hr>
+                <ol>
+                    <li>Access vault with answers</li>
+                    <li>Create temp PIN to lock/unlock</li>
+                    <li>Do step 1 if logged out or on new device</li>
+                </ol>
+            </div>
+            <div>&nbsp;</div>
+
+            <div>
                 <div><big>Decryption Process</big></div><hr>
                 <ol>
                     <li>Combine the answers</li>
@@ -114,8 +121,6 @@
                     <li>Use the answer-compound as decryption password</li>
                     <li>Decrypt the data file</li>
                     <li>Show up in UI</li>
-                    <li>Next: Cloud drive with pw-gated links</li>
-                    <li>Next: Serve master password for an existing vault</li>
                 </ol>
             </div>
             <div>&nbsp;</div>
@@ -123,16 +128,12 @@
             <div>
                 <div><big>Some Services</big></div><hr>
                 <ul>
-                    <li>Proton Drive: Can serve pw-gated links</li>
-                    <li>Proton Pass: A full-feature vault</li>
-                    <li>MEGA: Pw-gated link is paid-feature</li>
-                    <li>Dropbox: Pw-gated link is a paid-feature</li>
-                    <li>Google Drive: No pw-gated links</li>
-                    <li>OneDrive: No pw-gated links</li>
-                    <li>To-do: Host for app</li>
-                    <li>To-do: Server for app</li>
-                    <li>To-do: Option 1 / Access vault</li>
-                    <li>To-do: Option 2 / As separate vault</li>
+                    <li>Proton Drive: Can store root file</li>
+                    <li>Proton Pass: Root file unlocks this vault</li>
+                    <li>MEGA, Dropbox: Pw-gated link is paid-feature</li>
+                    <li>G Drive, OneDrive: No pw-gated links</li>
+                    <li>To-do: Option 1 / Use to access vault</li>
+                    <li>To-do: Option 2 / Be new vault service</li>
                 </ul>
             </div>
         </div>
