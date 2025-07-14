@@ -54,6 +54,22 @@ async function unzip_enc_blob(blob, file, password) {
 
 function _____CORE_____(){}
 
+// Start authentication
+async function start_auth(){
+    var User = d$("#Username").value;
+    var Ans  = d$("#Init-Ans").value;
+
+    if (User!="alice" && User!="bob" && User!="charlie" && User!="dan"){
+        alert("Invalid user name. Please choose one of: alice, bob, charlie, dan.");
+        return;
+    }
+    if (Ans!="Blue"){
+        alert("Invalid answer. Please enter 'Blue'.");
+        return;
+    }
+    d$("#Auth-Start").style.display = "none";
+}
+
 // Show auth info
 async function get_auth_pw(){
     const {enc} = wpower;

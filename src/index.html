@@ -1,150 +1,188 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Recakey • Recall-based passwordless vault concept</title>
-        <script src="libs/zip-full.min.js"></script>
-        <script type="module" src="index.js"></script>
-        <style>
-            * { box-sizing:border-box; }
-            body { 
-                margin:0; padding:0; padding-left:25vw; padding-right:25vw;
-                padding-bottom:25vh;
-            }
-            #Banner a       { color:white; }
-            #Banner a:hover { color:yellow; }
-            #Left-Box a     { color:#777; text-decoration:none; }
-        </style>
-    </head>
-    <body>
-        <div id="Banner" style="background:#123456; color:white;">
-            <h1><a target="_self" href="index.html">Recakey</a></h1>
-        </div>
-        <div>Recall-based passwordless vault concept (5 July 2025)</div>
-        Answer the questions in English alphabet.<hr>
 
-        <div id="Left-Box" style="width:24vw; border:1px solid silver; overflow:auto;
+<head>
+    <meta charset="utf-8">
+    <title>Recakey • Recall-based passwordless vault concept</title>
+    <script src="libs/zip-full.min.js"></script>
+    <script type="module" src="index.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            padding-left: 25vw;
+            padding-right: 25vw;
+            padding-bottom: 25vh;
+        }
+
+        #Banner a {
+            color: white;
+        }
+
+        #Banner a:hover {
+            color: yellow;
+        }
+
+        #Left-Box a {
+            color: #777;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Banner" style="background:#123456; color:white;">
+        <h1><a target="_self" href="index.html">Recakey</a></h1>
+    </div>
+    <div>Recall-based passwordless vault concept (5 July 2025)</div>
+    Answer the questions in English alphabet.
+    <hr>
+
+    <div id="Left-Box" style="width:24vw; border:1px solid silver; overflow:auto;
                 float:left;">
-            What is the shape you may think of (Alice: Round)?<br>
-            <input id="Shape" value="Round" placeholder="Required (Vision)"><hr>
+        What is the shape you may think of (Alice: Round)?<br>
+        <input id="Shape" value="Round" placeholder="Required (Vision)">
+        <hr>
 
-            What is the word you may think of (Alice: Earth)?<br>
-            <input id="Word" value="Earth" placeholder="Required (Sound)"><hr>
+        What is the word you may think of (Alice: Earth)?<br>
+        <input id="Word" value="Earth" placeholder="Required (Sound)">
+        <hr>
 
-            What is your town of birth (Alice: Westminster)?<br>
-            <input id="Town" value="Westminster" placeholder="Optional"><hr>
+        What is your town of birth (Alice: Westminster)?<br>
+        <input id="Town" value="Westminster" placeholder="Optional">
+        <hr>
 
-            What is your date of birth DDMMYYYY (Alice: 01011999)?<br>
-            <input id="Dob" value="01011999" placeholder="Optional"><hr>
+        What is your date of birth DDMMYYYY (Alice: 01011999)?<br>
+        <input id="Dob" value="01011999" placeholder="Optional">
+        <hr>
 
-            What is your father name in native order (Alice: John Doe)?<br>
-            <input id="Father" value="John Doe" placeholder="Optional"><hr>
+        What is your father name in native order (Alice: John Doe)?<br>
+        <input id="Father" value="John Doe" placeholder="Optional">
+        <hr>
 
-            What is your mother name in native order (Alice: Mary Doe)?<br>
-            <input id="Mother" value="Mary Doe" placeholder="Optional"><hr>
+        What is your mother name in native order (Alice: Mary Doe)?<br>
+        <input id="Mother" value="Mary Doe" placeholder="Optional">
+        <hr>
 
-            What is your first pet's name (Alice: Cooper)?<br>
-            <input id="Pet" value="Cooper" placeholder="Optional"><hr>
+        What is your first pet's name (Alice: Cooper)?<br>
+        <input id="Pet" value="Cooper" placeholder="Optional">
+        <hr>
 
-            What is your teenage music genre (Alice: Funk)?<br>
-            <input id="Music" value="Funk" placeholder="Optional"><hr>
+        What is your teenage music genre (Alice: Funk)?<br>
+        <input id="Music" value="Funk" placeholder="Optional">
+        <hr>
 
-            What is your favourite sports club (Alice: Arsenal)?<br>
-            <input id="Club" value="Arsenal" placeholder="Optional"><hr>
+        What is your favourite sports club (Alice: Arsenal)?<br>
+        <input id="Club" value="Arsenal" placeholder="Optional">
+        <hr>
 
-            Choose a profile to decrypt:<br>
-            <select id="User">
-                <option value="alice">Alice</option>
-                <option value="bob">Bob</option>
-                <option value="charlie">Charlie</option>
-                <option value="dan">Dan</option>
-            </select>
-            <div>&nbsp;</div>
+        Choose a profile to decrypt:<br>
+        <select id="User">
+            <option value="alice">Alice</option>
+            <option value="bob">Bob</option>
+            <option value="charlie">Charlie</option>
+            <option value="dan">Dan</option>
+        </select>
+        <div>&nbsp;</div>
 
-            References to Wikipedia:<br>
-            <ul>                
-                <li><a target="_blank" 
-                    href="https://en.wikipedia.org/wiki/End-to-end_encryption"
-                    >E2EE</a></li>
-                <li><a target="_blank" 
-                    href="https://en.wikipedia.org/wiki/Password_manager"
-                    >Master Password</a></li>
-                <li><a target="_blank" 
-                    href="https://en.wikipedia.org/wiki/Authentication"
-                    >Authentication</a></li>
-                <li><a target="_blank" 
-                    href="https://en.wikipedia.org/wiki/Encryption"
-                    >Encryption/Decryption</a></li>                
-                <li><a target="_blank" 
-                    href="https://en.wikipedia.org/wiki/Multi-factor_authentication#Possession"
-                    >Possession</a></li>
-                <li><a target="_blank" 
-                    href="https://en.wikipedia.org/wiki/Multi-factor_authentication#Knowledge"
-                    >Memorizing</a></li>
-                <li><a target="_blank" 
-                    href="https://en.wikipedia.org/wiki/Multi-factor_authentication#Inherent"
-                    >Inherence</a></li>
-            </ul>
-        </div>
+        References to Wikipedia:<br>
+        <ul>
+            <li><a target="_blank" href="https://en.wikipedia.org/wiki/End-to-end_encryption">E2EE</a></li>
+            <li><a target="_blank" href="https://en.wikipedia.org/wiki/Password_manager">Master Password</a></li>
+            <li><a target="_blank" href="https://en.wikipedia.org/wiki/Authentication">Authentication</a></li>
+            <li><a target="_blank" href="https://en.wikipedia.org/wiki/Encryption">Encryption/Decryption</a></li>
+            <li><a target="_blank"
+                    href="https://en.wikipedia.org/wiki/Multi-factor_authentication#Possession">Possession</a></li>
+            <li><a target="_blank"
+                    href="https://en.wikipedia.org/wiki/Multi-factor_authentication#Knowledge">Memorizing</a></li>
+            <li><a target="_blank"
+                    href="https://en.wikipedia.org/wiki/Multi-factor_authentication#Inherent">Inherence</a></li>
+        </ul>
+    </div>
 
-        <div style="width:24vw; float:right; display:inline-block;">
-            <div style="text-align:right;">
-                <button onclick="get_auth_pw();">1.Get Auth Pw to Download</button>
-                <button onclick="decrypt();">2.Decrypt and Show Contents</button>
-            </div>
-            <div>&nbsp;</div>
-
-            <div id="Info" style="text-align:right; background-color:#eee;">&nbsp;</div>
-            <div>&nbsp;</div>
-
-            <div>
-                <span style="display:inline-block; width:24vw; float:right;">
-                    <i>Vault data</i>:<br>
-                    <textarea id="Result" style="width:24vw; height:6rem"></textarea>
-                </span>
-            </div>
-            <div>&nbsp;</div>
-
-            <div>
-                <div><big>Overall Design</big></div><hr>
-                <ol>
-                    <li>A custom question per username before question list</li>
-                    <li>Access vault with answers of question list</li>
-                    <li>Create temp PIN to lock/unlock</li>
-                    <li>Back to step 1 if logged out or on new device</li>
-                </ol>
-            </div>
-            <div>&nbsp;</div>
-
-            <div>
-                <div><big>Decryption Process</big></div><hr>
-                <ol>
-                    <li>Combine the answers</li>
-                    <li>Get the hash of the answer-compound</li>
-                    <li>Get 1 part in the hash as auth password</li>
-                    <li>Download data with the auth password</li>
-                    <li>Load the data file</li>
-                    <li>Use the answer-compound as decryption password</li>
-                    <li>Decrypt the data file</li>
-                </ol>
-            </div>
-            <div>&nbsp;</div>
-
-            <div>
-                <div><big>Some Services</big></div><hr>
-                <ul>
-                    <li>Proton Drive: Can store root file</li>
-                    <li>Proton Pass: Root file unlocks this vault</li>
-                    <li>MEGA, Dropbox: Pw-gated link is paid-feature</li>
-                    <li>G Drive, OneDrive: No pw-gated links</li>
-                    <li>To-do: Option 1 / Use to access vault</li>
-                    <li>To-do: Option 2 / Be new vault service</li>
-                </ul>
-            </div>
+    <div style="width:24vw; float:right; display:inline-block;">
+        <div style="text-align:right;">
+            <button onclick="get_auth_pw();">1.Get Auth Pw to Download</button>
+            <button onclick="decrypt();">2.Decrypt and Show Contents</button>
         </div>
         <div>&nbsp;</div>
 
-        <div style="height:25vh;">&nbsp;</div>
-    </body>
+        <div id="Info" style="text-align:right; background-color:#eee;">&nbsp;</div>
+        <div>&nbsp;</div>
+
+        <div>
+            <span style="display:inline-block; width:24vw; float:right;">
+                <i>Vault data</i>:<br>
+                <textarea id="Result" style="width:24vw; height:6rem"></textarea>
+            </span>
+        </div>
+        <div>&nbsp;</div>
+
+        <div>
+            <div><big>Overall Design</big></div>
+            <hr>
+            <ol>
+                <li>A custom question per username before question list</li>
+                <li>Access vault with answers of question list</li>
+                <li>Create temp PIN to lock/unlock</li>
+                <li>Back to step 1 if logged out or on new device</li>
+            </ol>
+        </div>
+        <div>&nbsp;</div>
+
+        <div>
+            <div><big>Decryption Process</big></div>
+            <hr>
+            <ol>
+                <li>Combine the answers</li>
+                <li>Get the hash of the answer-compound</li>
+                <li>Get 1 part in the hash as auth password</li>
+                <li>Download data with the auth password</li>
+                <li>Load the data file</li>
+                <li>Use the answer-compound as decryption password</li>
+                <li>Decrypt the data file</li>
+            </ol>
+        </div>
+        <div>&nbsp;</div>
+
+        <div>
+            <div><big>Some Services</big></div>
+            <hr>
+            <ul>
+                <li>Proton Drive: Can store root file</li>
+                <li>Proton Pass: Root file unlocks this vault</li>
+                <li>MEGA, Dropbox: Pw-gated link is paid-feature</li>
+                <li>G Drive, OneDrive: No pw-gated links</li>
+                <li>To-do: Option 1 / Use to access vault</li>
+                <li>To-do: Option 2 / Be new vault service</li>
+            </ul>
+        </div>
+    </div>
+    <div>&nbsp;</div>
+    <div style="height:25vh;">&nbsp;</div>
+
+    <!-- Auth start -->
+    <div id="Auth-Start" style="width:100vw; height:100vh; position:fixed; left:0; top:0; background-color:white;">
+        <div style="width:50vw; height:50vh; margin-left:25vw; margin-top:25vh; background-color: silver; padding: 1.5rem;">
+            <div><big>Username</big></div>
+            <div><i>Sample usernames: alice, bob, charlie, dan</i></div>
+            <input type="text" id="Username" style="width:100%;">
+
+            <div><big>The colour of the sky is?</big></div>
+            <div><i>Sample answer: Blue</i></div>
+            <input type="password" id="Init-Ans" style="width:100%;">
+            <button style="width:100%;" onclick="start_auth();">Start Authentication</button>
+            <div>&nbsp;</div>
+
+            <div><u>Note</u>:</div>
+            <div>This is just UI layer to hide out. In real implementation, this should be a separate screen or page.</div>
+        </div>
+    </div>
+</body>
+
 </html>
 <!-- EOF -->
