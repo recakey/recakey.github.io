@@ -58,9 +58,10 @@ function _____CORE_____(){}
 async function get_auth_pw(){
     const {enc} = wpower;
     const Files={
-        "alice":   "https://drive.proton.me/urls/YWH5YJG3S8#EyB0xGQphFjP",
-        "bob":     "https://drive.proton.me/urls/HA91EJ7YER#ir24uwPZC4T1",
-        "charlie": "https://drive.proton.me/urls/7MY0WPAP6M#1YlvgqwZxKGy"
+        "alice":   "https://drive.proton.me/urls/YWH5YJG3S8#EyB0xGQphFjP",        
+        "bob":     "https://drive.proton.me/urls/FFQHYCMX74#ahCul4D1GV26",
+        "charlie": "https://drive.proton.me/urls/7MY0WPAP6M#1YlvgqwZxKGy",
+        "dan":     "https://drive.proton.me/urls/HA91EJ7YER#ir24uwPZC4T1"
     };    
     var V1     = d$("#Shape").value;
     var V2     = d$("#Word").value;
