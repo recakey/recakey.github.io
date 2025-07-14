@@ -95,7 +95,8 @@ async function get_auth_pw(){
     var Url    = Files[User];
     log(`Calculated auth pw of ${User}:`,Authpw);
     d$("#Info").innerHTML = 
-        `Auth password: <input value="${Authpw}"> —> 
+        `Auth password: <input value="${Authpw}"
+        title="This password can be used to set as storage service&#13;password to access files, such as Nextcloud service.&#13;However, for OAuth or non-password-based auth, the URL to&#13;data files are needed to be supplied and stored."> —> 
         <a target="_blank" href="${Url}">Download Data</a>`;
 }
 window.get_auth_pw = get_auth_pw;
