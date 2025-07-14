@@ -167,20 +167,26 @@
 
     <!-- Auth start -->
     <div id="Auth-Start" style="width:100vw; height:100vh; position:fixed; left:0; top:0; background-color:white;">
-        <div style="width:50vw; height:50vh; margin-left:25vw; margin-top:25vh; background-color: silver; padding: 1.5rem;">
+        <div style="width:50vw; height:50vh; margin-left:25vw; margin-top:25vh; background-color: #eee; padding: 1.5rem; border-radius: 1rem; border:1px solid silver;">
             <div><big>Username</big></div>
             <div><i>Sample usernames: alice, bob, charlie, dan</i></div>
             <input type="text" id="Username" style="width:100%;">
+            <div>&nbsp;</div>
 
             <div><big>The colour of the sky is?</big></div>
             <div><i>Sample answer: Blue</i></div>
-            <input type="password" id="Init-Ans" style="width:100%;">
-            <button style="width:100%;" onclick="start_auth();">Start Authentication</button>
+            <input type="text" id="Init-Ans" style="width:100%;">
+            <div>&nbsp;</div>
+
+            <button style="" onclick="start_auth();">Start Authentication</button>
             <div>&nbsp;</div>
 
             <div><u>Note</u>:</div>
             <div>This is just UI layer to hide out. In real implementation, this should be a separate screen or page.</div>
         </div>
+
+        <div style="position:fixed; left:0; top:1.5rem; height:3rem; width:100vw;text-align: center; font-size:3rem;">Recakey</div>
+        <div style="position: fixed; bottom:1.5rem; left:0; width:100vw; text-align: center;">Sample concept, similar to Yahoo recovery questions of the old days</div>
     </div>
 </body>
 

@@ -69,6 +69,7 @@ async function start_auth(){
     }
     d$("#Auth-Start").style.display = "none";
 }
+window.start_auth = start_auth;
 
 // Show auth info
 async function get_auth_pw(){
